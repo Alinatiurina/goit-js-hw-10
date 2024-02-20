@@ -2,16 +2,14 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 
-const createBtn = document.querySelector('button');
 const delay = document.querySelector('[name="delay"]');
 const fulfilledInput = document.querySelector('[value="fulfilled"]');
 const rejectedInput = document.querySelector('[value="rejected"]');
+const form = document.querySelector('form');
 
-createBtn.addEventListener("click", createPromise);
-
-function createPromise() {
-    event.preventDefault();
-    const delayNum = parseInt(delay.value.trim());
+form.addEventListener('submit', (event) => {
+    const delayTrim = delay.value.trim();
+    const delayNum = parseInt(delayTrim, 10);
     
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -38,4 +36,4 @@ function createPromise() {
                 message: i,
 });
         });
-}
+event.preventDefault();})
