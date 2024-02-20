@@ -17,30 +17,26 @@
       <a href="./index.html">Go to home</a>
       <h1>Завдання 2 - Генератор промісів</h1>
 
-      <section>
-        <form class="form">
+      <form class="form">
+        <label>
+          Delay (ms)
+          <input type="number" name="delay" required />
+        </label>
+
+        <fieldset>
+          <legend>State</legend>
           <label>
-            Delay (ms)
-            <input type="number" name="delay" required />
+            <input type="radio" name="state" value="fulfilled" required />
+            Fulfilled
           </label>
+          <label>
+            <input type="radio" name="state" value="rejected" required />
+            Rejected
+          </label>
+        </fieldset>
 
-          <fieldset>
-            <legend>State</legend>
-            <label>
-              <input type="radio" name="state" value="fulfilled" required />
-              Fulfilled
-            </label>
-            <label>
-              <input type="radio" name="state" value="rejected" required />
-              Rejected
-            </label>
-          </fieldset>
-
-          <button type="submit" class="button-create">
-            Create notification
-          </button>
-        </form>
-      </section>
+        <button type="submit" class="button-create">Create notification</button>
+      </form>
     </section>
     
   </body>
